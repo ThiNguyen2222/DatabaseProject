@@ -9,12 +9,12 @@ INSERT INTO Professor VALUES ('112233445', 'Dr. Kim', 'F', 'Assistant Professor'
 
 -- Courses
 INSERT INTO Course VALUES ('CPSC101', 'Intro to Programming', 'Python Crash Course', 3, 'CPSC');
-INSERT INTO Course VALUES ('CPSC131', 'Data Structures', 'Data Structures and Algorithms', 3, 'CPSC');
+INSERT INTO Course VALUES ('CPSC111', 'Object Oriented Programming', 'Mastering Object-Oriented Programming', 3, 'CPSC');
 INSERT INTO Course VALUES ('MATH150', 'Calculus I', 'Calculus: Early Transcendentals', 4, 'MATH');
 INSERT INTO Course VALUES ('MATH250', 'Linear Algebra', 'Linear Algebra Done Right', 3, 'MATH');
 
 -- Prerequisites
-INSERT INTO Prerequisite VALUES ('CPSC131', 'CPSC101');
+INSERT INTO Prerequisite VALUES ('CPSC121', 'CPSC101');
 
 -- Sections
 INSERT INTO Section VALUES (1, 'CPSC101', 1, 'CS-101', 30, 'MW', '09:00:00', '10:15:00', '123456789');
