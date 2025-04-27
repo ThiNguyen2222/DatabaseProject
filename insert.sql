@@ -9,7 +9,7 @@ INSERT INTO Professor VALUES ('112233445', 'Dr. Kim', 'F', 'Assistant Professor'
 
 -- Courses
 INSERT INTO Course VALUES ('CPSC101', 'Intro to Programming', 'Python Crash Course', 3, 'CPSC');
-INSERT INTO Course VALUES ('CPSC111', 'Object Oriented Programming', 'Mastering Object-Oriented Programming', 3, 'CPSC');
+INSERT INTO Course VALUES ('CPSC121', 'Object Oriented Programming', 'Mastering Object-Oriented Programming', 3, 'CPSC');
 INSERT INTO Course VALUES ('MATH150', 'Calculus I', 'Calculus: Early Transcendentals', 4, 'MATH');
 INSERT INTO Course VALUES ('MATH250', 'Linear Algebra', 'Linear Algebra Done Right', 3, 'MATH');
 
@@ -19,7 +19,7 @@ INSERT INTO Prerequisite VALUES ('CPSC121', 'CPSC101');
 -- Sections
 INSERT INTO Section VALUES (1, 'CPSC101', 1, 'CS-101', 30, 'MW', '09:00:00', '10:15:00', '123456789');
 INSERT INTO Section VALUES (2, 'CPSC101', 2, 'CS-102', 25, 'TTh', '11:00:00', '12:15:00', '123456789');
-INSERT INTO Section VALUES (3, 'CPSC131', 1, 'CS-201', 20, 'MW', '13:00:00', '14:15:00', '112233445');
+INSERT INTO Section VALUES (3, 'CPSC121', 1, 'CS-201', 20, 'MW', '13:00:00', '14:15:00', '112233445');
 INSERT INTO Section VALUES (4, 'MATH150', 1, 'MH-101', 35, 'MWF', '10:00:00', '10:50:00', '987654321');
 INSERT INTO Section VALUES (5, 'MATH250', 1, 'MH-102', 25, 'TTh', '14:00:00', '15:15:00', '987654321');
 INSERT INTO Section VALUES (6, 'MATH250', 2, 'MH-103', 20, 'MW', '15:00:00', '16:15:00', '987654321');
