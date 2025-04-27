@@ -38,7 +38,7 @@ INSERT INTO Student VALUES ('S0000008', 'Hank', 'Pham', '714', '5550008', '107 M
 INSERT INTO StudentMinor VALUES ('S0000001', 'MATH');
 INSERT INTO StudentMinor VALUES ('S0000002', 'MATH');
 
--- Enrollment (20 Records)
+-- Enrollment
 INSERT INTO Enrollment VALUES ('S0000001', 1, 'A');
 INSERT INTO Enrollment VALUES ('S0000002', 1, 'B+');
 INSERT INTO Enrollment VALUES ('S0000003', 2, 'A-');
