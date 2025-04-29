@@ -54,7 +54,7 @@ CREATE TABLE Section (
 );
 
 CREATE TABLE Student (
-  CampusID CHAR(8) PRIMARY KEY,
+  CampusID CHAR(9) PRIMARY KEY,
   FirstName VARCHAR(30),
   LastName VARCHAR(30),
   AreaCode CHAR(3),
@@ -68,7 +68,7 @@ CREATE TABLE Student (
 );
 
 CREATE TABLE StudentMinor (
-  CampusID CHAR(8),
+  CampusID CHAR(9),
   DeptID CHAR(4),
   PRIMARY KEY (CampusID, DeptID),
   FOREIGN KEY (CampusID) REFERENCES Student(CampusID),
@@ -76,7 +76,7 @@ CREATE TABLE StudentMinor (
 );
 
 CREATE TABLE Enrollment (
-  CampusID CHAR(8),
+  CampusID CHAR(9),
   SectionID INT,
   Grade VARCHAR(2),
   PRIMARY KEY (CampusID, SectionID),
