@@ -39,22 +39,39 @@ INSERT INTO StudentMinor VALUES ('880000001', 'MATH');
 INSERT INTO StudentMinor VALUES ('880000002', 'MATH');
 
 -- Enrollment (20 Records)
-INSERT INTO Enrollment VALUES ('880000001', 1, 'A');
-INSERT INTO Enrollment VALUES ('880000002', 1, 'B+');
+-- Student 1: 880000001 -> Sections 2, 4, 5
+INSERT INTO Enrollment VALUES ('880000001', 2, 'A');
+INSERT INTO Enrollment VALUES ('880000001', 4, 'B+');
+INSERT INTO Enrollment VALUES ('880000001', 5, 'A-');
+
+-- Student 2: 880000002 -> Sections 2, 4, 5
+INSERT INTO Enrollment VALUES ('880000002', 2, 'B');
+INSERT INTO Enrollment VALUES ('880000002', 4, 'A');
+INSERT INTO Enrollment VALUES ('880000002', 5, 'B+');
+
+-- Student 3: 880000003 -> Sections 2, 4, 6
 INSERT INTO Enrollment VALUES ('880000003', 2, 'A-');
-INSERT INTO Enrollment VALUES ('880000004', 2, 'B');
+INSERT INTO Enrollment VALUES ('880000003', 4, 'B');
+INSERT INTO Enrollment VALUES ('880000003', 6, 'B+');
+
+-- Student 4: 880000004 -> Sections 2, 6
+INSERT INTO Enrollment VALUES ('880000004', 2, 'C+');
+INSERT INTO Enrollment VALUES ('880000004', 6, 'A');
+
+-- Student 5: 880000005 -> Sections 3, 6
 INSERT INTO Enrollment VALUES ('880000005', 3, 'A');
-INSERT INTO Enrollment VALUES ('880000006', 3, 'C+');
-INSERT INTO Enrollment VALUES ('880000007', 4, 'B-');
-INSERT INTO Enrollment VALUES ('880000008', 4, 'A');
-INSERT INTO Enrollment VALUES ('880000001', 5, 'B+');
-INSERT INTO Enrollment VALUES ('880000002', 5, 'C');
-INSERT INTO Enrollment VALUES ('880000003', 5, 'B+');
-INSERT INTO Enrollment VALUES ('880000004', 6, 'A-');
-INSERT INTO Enrollment VALUES ('880000005', 6, 'B');
-INSERT INTO Enrollment VALUES ('880000006', 1, 'C');
-INSERT INTO Enrollment VALUES ('880000007', 2, 'B-');
+INSERT INTO Enrollment VALUES ('880000005', 6, 'B+');
+
+-- Student 6: 880000006 -> Sections 3, 5
+INSERT INTO Enrollment VALUES ('880000006', 3, 'B');
+INSERT INTO Enrollment VALUES ('880000006', 5, 'A');
+
+-- Student 7: 880000007 -> Sections 2, 4, 6
+INSERT INTO Enrollment VALUES ('880000007', 2, 'A-');
+INSERT INTO Enrollment VALUES ('880000007', 4, 'A');
+INSERT INTO Enrollment VALUES ('880000007', 6, 'B');
+
+-- Student 8: 880000008 -> Sections 3, 4
 INSERT INTO Enrollment VALUES ('880000008', 3, 'A');
-INSERT INTO Enrollment VALUES ('880000001', 4, 'B');
-INSERT INTO Enrollment VALUES ('880000008', 1, 'B+');
-INSERT INTO Enrollment VALUES ('880000003', 6, 'C+');
+INSERT INTO Enrollment VALUES ('880000008', 4, 'B-');
+
