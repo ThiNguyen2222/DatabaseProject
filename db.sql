@@ -1,12 +1,3 @@
-CREATE TABLE Department (
-  DeptID CHAR(4) PRIMARY KEY,
-  Name VARCHAR(50),
-  Telephone VARCHAR(15),
-  OfficeLocation VARCHAR(50),
-  ChairSSN CHAR(9),
-  FOREIGN KEY (ChairSSN) REFERENCES Professor(SSN)
-);
-
 CREATE TABLE Professor (
   SSN CHAR(9) PRIMARY KEY,
   Name VARCHAR(50),
@@ -22,6 +13,15 @@ CREATE TABLE Professor (
   Zip CHAR(5)
 );
 
+CREATE TABLE Department (
+  DeptID CHAR(4) PRIMARY KEY,
+  Name VARCHAR(50),
+  Telephone VARCHAR(15),
+  OfficeLocation VARCHAR(50),
+  ChairSSN CHAR(9),
+  FOREIGN KEY (ChairSSN) REFERENCES Professor(SSN)
+);
+
 CREATE TABLE Course (
   CourseID CHAR(7) PRIMARY KEY,
   Title VARCHAR(100),
@@ -32,7 +32,7 @@ CREATE TABLE Course (
 );
 
 CREATE TABLE Prerequisite (
-  CourseID CHAR(6),
+  CourseID CHAR(7),
   PrereqCourseID CHAR(6),
   PRIMARY KEY (CourseID, PrereqCourseID),
   FOREIGN KEY (CourseID) REFERENCES Course(CourseID),
@@ -41,7 +41,7 @@ CREATE TABLE Prerequisite (
 
 CREATE TABLE Section (
   SectionID INT PRIMARY KEY,
-  CourseID CHAR(6),
+  CourseID CHAR(7),
   SectionNumber INT,
   Classroom VARCHAR(50),
   Seats INT,
