@@ -1,11 +1,11 @@
--- Departments
-INSERT INTO Department VALUES ('CPSC', 'Computer Science', '6572783700', 'CS-522', '123456789');
-INSERT INTO Department VALUES ('MATH', 'Mathematics', '6572783631', 'MH-154', '987654321');
-
 -- Professors
 INSERT INTO Professor VALUES ('123456789', 'Dr. Smith', 'M', 'Professor', 90000, 'PhD CS', '714', '5551234', '123 Main St', 'Fullerton', 'CA', '92831');
 INSERT INTO Professor VALUES ('987654321', 'Dr. Doe', 'F', 'Associate Professor', 85000, 'PhD Math', '714', '5555678', '456 State St', 'Fullerton', 'CA', '92831');
 INSERT INTO Professor VALUES ('112233445', 'Dr. Kim', 'F', 'Assistant Professor', 78000, 'PhD CS', '714', '5557890', '789 Palm St', 'Fullerton', 'CA', '92831');
+
+-- Departments
+INSERT INTO Department VALUES ('CPSC', 'Computer Science', '6572783700', 'CS-522', '123456789');
+INSERT INTO Department VALUES ('MATH', 'Mathematics', '6572783631', 'MH-154', '987654321');
 
 -- Courses
 INSERT INTO Course VALUES ('CPSC101', 'Intro to Programming', 'Python Crash Course', 3, 'CPSC');
@@ -56,5 +56,5 @@ INSERT INTO Enrollment VALUES ('880000006', 1, 'C');
 INSERT INTO Enrollment VALUES ('880000007', 2, 'B-');
 INSERT INTO Enrollment VALUES ('880000008', 3, 'A');
 INSERT INTO Enrollment VALUES ('880000001', 4, 'B');
-INSERT INTO Enrollment VALUES ('880000002', 5, 'B+');
+INSERT INTO Enrollment VALUES ('880000008', 1, 'B+');
 INSERT INTO Enrollment VALUES ('880000003', 6, 'C+');
