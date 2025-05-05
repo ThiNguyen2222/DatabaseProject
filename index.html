@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Database System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select { padding: 8px; width: 100%; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .tab { overflow: hidden; border: 1px solid #ccc; background-color: #f1f1f1; }
+        .tab button { background-color: inherit; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; transition: 0.3s; }
+        .tab button:hover { background-color: #ddd; }
+        .tab button.active { background-color: #ccc; }
+        .tabcontent { display: none; padding: 20px; border: 1px solid #ccc; border-top: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>University Database System</h1>
+        
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Professor')">Professor</button>
+            <button class="tablinks" onclick="openTab(event, 'Student')">Student</button>
+        </div>
+        
+        <div id="Professor" class="tabcontent">
+            <h2>Professor Interface</h2>
+            
+            <div class="form-group">
+                <h3>View Professor's Classes</h3>
+                <form action="professor_classes.php" method="post">
+                    <label for="prof_ssn">Professor SSN:</label>
+                    <input type="text" id="prof_ssn" name="prof_ssn" required>
+                    <button type="submit">View Classes</button>
+                </form>
+            </div>
+            
+            <div class="form-group">
+                <h3>View Grade Distribution</h3>
+                <form action="grade_distribution.php" method="post">
+                    <label for="course_id">Course Number:</label>
+                    <input type="text" id="course_id" name="course_id" required>
+                    
+                    <label for="section_id">Section Number:</label>
+                    <input type="text" id="section_id" name="section_id" required>
+                    
+                    <button type="submit">View Grade Distribution</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="Student" class="tabcontent">
+            <h2>Student Interface</h2>
+            
+            <div class="form-group">
+                <h3>View Course Sections</h3>
+                <form action="course_sections.php" method="post">
+                    <label for="course_num">Course Number:</label>
+                    <input type="text" id="course_num" name="course_num" required>
+                    <button type="submit">View Sections</button>
+                </form>
+            </div>
+            
+            <div class="form-group">
+                <h3>View Student Transcript</h3>
+                <form action="student_transcript.php" method="post">
+                    <label for="student_id">Student ID:</label>
+                    <input type="text" id="student_id" name="student_id" required>
+                    <button type="submit">View Transcript</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        // Show the Professor tab by default
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+</body>
+</html>
