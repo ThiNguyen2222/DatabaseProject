@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Connects to Database
-$conn = new mysqli('mariadb', 'cs332sXX', 'YOUR_MYSQL_PASSWORD', 'cs332sXX');
+$conn = new mysqli('mariadb', 'cs332s27', '80NB9UEV', 'cs332s27');
 
 // Check if connection failed and display error message if it did
 if ($conn->connect_error) {
@@ -13,14 +13,6 @@ if ($conn->connect_error) {
 // Validate inputs
 $course_num = $conn->real_escape_string($_POST['course_num']);
 
-/**
- * SQL QUERY: COURSE SECTIONS
- * Retrieves all sections for the specified course including:
- * - Section details (number, classroom, schedule)
- * - Enrollment count for each section
- * Uses LEFT JOIN to include sections with no enrollments
- * GROUP BY aggregates enrollment counts per section
- */
 $sql = "SELECT s.SectionNumber, s.Classroom, s.MeetingDays, s.StartTime, s.EndTime, 
                COUNT(e.CampusID) as EnrollmentCount
         FROM Section s
@@ -48,7 +40,6 @@ if ($result->num_rows > 0) {
     // Loop through each section record
     while($row = $result->fetch_assoc()) {
         // Output each section as a table row
-        // htmlspecialchars prevents XSS attacks by escaping HTML characters
         echo "<tr>
                 <td>".htmlspecialchars($row["SectionNumber"])."</td>
                 <td>".htmlspecialchars($row["Classroom"])."</td>
