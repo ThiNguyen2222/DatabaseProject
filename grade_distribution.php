@@ -14,13 +14,6 @@ if ($conn->connect_error) {
 $course_id = $conn->real_escape_string($_POST['course_id']);
 $section_id = (int)$_POST['section_id'];
 
-/**
- * SQL QUERY CONSTRUCTION
- * Query counts students per grade for specified course section
- * - Joins Enrollment and Section tables
- * - Groups results by Grade
- * - Orders grades logically (A first, F last)
- */
 $sql = "SELECT Grade, COUNT(*) as Count 
         FROM Enrollment e
         JOIN Section s ON e.SectionID = s.SectionID
@@ -59,7 +52,6 @@ if ($result->num_rows > 0) {
     // Loop through each grade result
     while($row = $result->fetch_assoc()) {
         // Output each grade count as a table row
-        // htmlspecialchars() prevents XSS attacks
         echo "<tr>
                 <td>".htmlspecialchars($row["Grade"])."</td>
                 <td>".htmlspecialchars($row["Count"])."</td>
