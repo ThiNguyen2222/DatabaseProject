@@ -13,13 +13,7 @@ if ($conn->connect_error) {
 // Validate inputs
 $student_id = $conn->real_escape_string($_POST['student_id']);
 
-/**
- * MAIN QUERY: STUDENT TRANSCRIPT
- * Retrieves all courses the student has taken with grades
- * - Joins three tables: Enrollment, Section, and Course
- * - Filters by the student's CampusID
- * - Returns CourseID, Title, SectionNumber, and Grade
- */
+
 $sql = "SELECT c.CourseID, c.Title, s.SectionNumber, e.Grade
         FROM Enrollment e
         JOIN Section s ON e.SectionID = s.SectionID
@@ -44,7 +38,6 @@ if ($result->num_rows > 0) {
     // Loop through each course record
     while($row = $result->fetch_assoc()) {
         // Output each course as a table row
-        // htmlspecialchars prevents XSS attacks by escaping HTML characters
         echo "<tr>
                 <td>".htmlspecialchars($row["CourseID"])."</td>
                 <td>".htmlspecialchars($row["Title"])."</td>
