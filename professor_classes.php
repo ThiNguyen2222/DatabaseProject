@@ -13,10 +13,6 @@ if ($conn->connect_error) {
 // Validate inputs
 $prof_ssn = $conn->real_escape_string($_POST['prof_ssn']);
 
-/**
- * SQL QUERY SECTION
- * Retrieves class information for the specified professor
- */
 $sql = "SELECT c.Title, s.Classroom, s.MeetingDays, s.StartTime, s.EndTime 
         FROM Section s
         JOIN Course c ON s.CourseID = c.CourseID
@@ -41,7 +37,6 @@ if ($result->num_rows > 0) {
     // Loop through each row of results
     while($row = $result->fetch_assoc()) {
         // Output each course as a table row
-        // htmlspecialchars() prevents XSS attacks by escaping HTML characters
         echo "<tr>
                 <td>".htmlspecialchars($row["Title"])."</td>
                 <td>".htmlspecialchars($row["Classroom"])."</td>
